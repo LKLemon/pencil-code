@@ -32,7 +32,10 @@ export MPICH_GPU_SUPPORT_ENABLED=0
 
 CONF="$PENCIL_HOME/config/hosts/lumi/host-uan04-GNU_Linux.conf"
 
-# Build if binary missing (same modules as run)
+rm -f PC-AC.conf ac_grid_info.csv ac_compilation.log ac_autotuning.log ac_runtime_compilation.log
+# After changing nxgrid, remove old snapshots (mixed 128/256 var.dat → GPU NaNs).
+rm -f data/var.dat data/proc*/var.dat 2>/dev/null || true
+
 pc_setupsrc --force-astaroth
 # Force rebuild after Makefile.local / grid changes
 pc_build -f "$CONF"

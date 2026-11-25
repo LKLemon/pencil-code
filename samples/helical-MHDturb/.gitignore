@@ -13,6 +13,17 @@ gpucore.*
 # Slurm logs from run_gpu_256.slurm
 helical-gpu-256_*.out
 helical-gpu-256_*.err
+helical-gpu-256-8_*.out
+helical-gpu-256-8_*.err
+
+# pc_build copies/ links sources into sample root (do not commit)
+/*.f90
+/*.h
+/*.c
+/*.inc
+/*.f
+/*.sed
+scripts
 
 # Astaroth / PC runtime logs
 ac_*.log

@@ -7,5 +7,5 @@
 !
 !
 integer, parameter :: ncpus=1,nprocy=1,nprocz=ncpus/nprocy,nprocx=1
-integer, parameter :: nxgrid=128,nygrid=nxgrid,nzgrid=nxgrid
+integer, parameter :: nxgrid=256,nygrid=nxgrid,nzgrid=nxgrid
 !integer, parameter :: npar=30000, npar_stalk=1000

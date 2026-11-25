@@ -14,7 +14,7 @@ FORCING  =   forcing
 PSCALAR  =   pscalar_nolog
 
 FOURIER  =   fourier_fftpack
-POWER    =   power_spectrum
+POWER    =   nopower_spectrum
 POISSON  =   poisson
 
 PARTICLES         =   noparticles

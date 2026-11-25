@@ -1,0 +1,21 @@
+# Local build/run artifacts (pc_build in sample dir)
+Makefile
+Makefile.src
+Makefile.depend
+Makefile.library
+*.o
+*.mod
+*.x
+src/astaroth/
+core
+gpucore.*
+
+# Slurm logs from run_gpu_256.slurm
+helical-gpu-256_*.out
+helical-gpu-256_*.err
+
+# Astaroth / PC runtime logs
+ac_*.log
+taskgraph_log.txt
+PC-AC.conf
+ac_grid_info.csv

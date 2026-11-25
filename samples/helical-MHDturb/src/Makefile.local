@@ -17,9 +17,11 @@ FOURIER  =   fourier_fftpack
 POWER    =   power_spectrum
 POISSON  =   poisson
 
-PARTICLES         =   particles_tracers
-PARTICLES_STALKER =   particles_stalker
+PARTICLES         =   noparticles
+PARTICLES_STALKER =   noparticles_stalker
 
 #SIGNAL_HANDLING   =   signal_handling
 
 REAL_PRECISION=double
+
+GPU = gpu_astaroth

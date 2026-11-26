@@ -71,3 +71,28 @@ one. `dt=2e-2` is also above the 256³ limit (and above the von Neumann bound �
 6th-order differences with RK3); it survived `nt=10` only because grid-scale amplitudes start
 small. Timing per step does not depend on `dt`, but longer 256³ runs should use `dt=1e-2`
 or `dt=0` (automatic time step).
+
+## GPU with particles (`particles_tracers`)
+
+Touko's follow-up: same 256³ GPU run **with tracers** (upstream helical defaults).
+
+| Setting | Value |
+|---------|--------|
+| `src/Makefile.local` | `PARTICLES=particles_tracers`, `PARTICLES_STALKER=particles_stalker` |
+| `src/cparam.local` | `npar=30000`, `npar_stalk=1000` |
+| `print.in` | `xp2m`, `yp2m`, `zp2m` enabled |
+
+Submit:
+
+```bash
+cd $PENCIL_HOME/samples/helical-MHDturb
+sbatch run_gpu_256_particles.slurm
+grep -i 'Wall clock' helical-gpu-256-particles_<JOBID>.out
+```
+
+With particles, the main line is:
+
+`Wall clock time/timestep/(meshpoint+particle) [microsec] =`
+
+Compare to continuum-only **0.693 µs/meshpoint** (job 24022384). If GPU memory fault,
+lower `npar` in `cparam.local` (e.g. 10000), rebuild, and retry.

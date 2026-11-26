@@ -15,6 +15,8 @@ helical-gpu-256_*.out
 helical-gpu-256_*.err
 helical-gpu-256-8_*.out
 helical-gpu-256-8_*.err
+helical-gpu-256-particles_*.out
+helical-gpu-256-particles_*.err
 
 # pc_build copies/ links sources into sample root (do not commit)
 /*.f90
